@@ -12,7 +12,10 @@
     "lint:watch": "chokidar --silent ./src/**/*.ts{,x} -c \"npm run -s lint\"",
     "build": "tsc",
     "build:clean": "run-s clean build",
-    "build:watch": "npm run -s build -- --watch"
+    "build:watch": "npm run -s build -- --watch",
+    "gcp-build": "npm run -s build",
+    "migrate-up": "typeorm migration:run",
+    "migrate-down": "typeorm migration:revert"
   },
   "repository": {
     "type": "git",
