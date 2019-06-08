@@ -1,0 +1,19 @@
+{
+  "name": "@sotah-inc/venture-co-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sotah-inc/venture-co-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sotah-inc/venture-co-api/issues"
+  },
+  "homepage": "https://github.com/sotah-inc/venture-co-api#readme"
+}
