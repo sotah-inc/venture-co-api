@@ -13,7 +13,7 @@
     "build": "tsc",
     "build:clean": "run-s clean build",
     "build:watch": "npm run -s build -- --watch",
-    "gcp-build": "npm run -s build",
+    "gcp-build": "npm run -s build:clean",
     "migrate-up": "typeorm migration:run",
     "migrate-down": "typeorm migration:revert"
   },

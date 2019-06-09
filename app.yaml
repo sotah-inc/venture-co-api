@@ -1,4 +1,4 @@
-service: api
+service: api-dev
 runtime: nodejs10
 instance_class: F2
 
