@@ -17,4 +17,4 @@ WORKDIR /srv/app
 COPY --from=ihsw/sotah-api/build /srv/app/build ./build
 COPY --from=ihsw/sotah-api/build /srv/app/node_modules ./node_modules
 
-CMD ["npm start -s"]
+CMD ["npm", "start", "-s"]
