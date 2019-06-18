@@ -1,5 +1,5 @@
 # running
-FROM node:10-alpine
+FROM node
 
 # misc
 ENV DB_HOST 0.0.0.0
@@ -16,9 +16,5 @@ WORKDIR /srv/app
 # copying in built app
 COPY --from=ihsw/sotah-api/build /srv/app/build ./build
 COPY --from=ihsw/sotah-api/build /srv/app/node_modules ./node_modules
-
-# initializing different user
-RUN adduser -S sotah
-USER sotah
 
 CMD ["npm", "start", "-s"]
