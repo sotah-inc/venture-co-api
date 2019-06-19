@@ -2,7 +2,7 @@
   "name": "@sotah-inc/venture-co-api",
   "version": "1.0.0",
   "description": "",
-  "main": "build/dist/index-dev.js",
+  "main": "build/dist/index.js",
   "scripts": {
     "clean": "rimraf ./build",
     "debug": "run-p build:watch lint:watch",
