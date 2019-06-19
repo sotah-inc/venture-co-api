@@ -1,6 +1,6 @@
 import { Firestore } from "@google-cloud/firestore";
 import { getApp, getLogger } from "@sotah-inc/api";
-import * as process from "process";
+import process from "process";
 
 // env-var loading
 const isGceEnv = (() => {
@@ -56,7 +56,7 @@ const logger = getLogger({ level: "debug", isGceEnv });
 
 (async () => {
   // gathering runtime configs
-  const appPort = process.env["PORT"] || 8080;
+  const appPort = process.env["PORT"] || "8080";
   const natsHost: string = await getConfig("nats_host", "NATS_HOST");
   const natsPort: string = await getConfig("nats_port", "NATS_PORT");
   const dbHost: string = await getConfig("db_host", "DB_HOST");
