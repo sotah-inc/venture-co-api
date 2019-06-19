@@ -1,5 +1,5 @@
 # running
-FROM node
+FROM node:10-alpine
 
 # misc
 ENV DB_HOST 0.0.0.0
