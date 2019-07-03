@@ -13,7 +13,7 @@ RUN apk --no-cache add --virtual native-deps \
 RUN npm install -s -g node-gyp \
   && npm install -s \
   && npm rebuild bcrypt --build-from-source \
-  && npm run -s build:clean
+  && npm run -s build
 
 # removing dev/build deps and installing only prod deps
 RUN rm -rf ./node_modules \
