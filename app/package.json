@@ -1,6 +1,7 @@
 {
   "name": "@sotah-inc/venture-co-api",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "build/dist/index.js",
   "scripts": {
