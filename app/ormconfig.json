@@ -6,8 +6,8 @@
   "port": 5432,
   "synchronize": false,
   "logging": false,
-  "migrations": ["./dist/migrations/*.js"],
+  "migrations": ["./build/dist/migrations/*.js"],
   "cli": {
-    "migrationsDir": "./src/migrations"
+    "migrationsDir": "./build/dist/src/migrations"
   }
 }
