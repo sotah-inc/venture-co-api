@@ -1,55 +1,9 @@
-import { Firestore } from "@google-cloud/firestore";
 import { getApp, getLogger } from "@sotah-inc/api";
+import { getEnvVar } from "@sotah-inc/core";
+import { getConfig } from "@sotah-inc/server";
 import process from "process";
 
-// env-var loading
-const isGceEnv = (() => {
-  const result = process.env["IS_GCE_ENV"] || "";
-  return result === "1";
-})();
-
-// optionally loading firestore
-const firestoreDb: Firestore | null = isGceEnv ? new Firestore() : null;
-
-const getEnvVar = (envVarName: string): string => {
-  const envVar = process.env[envVarName];
-  if (typeof envVar === "undefined") {
-    return "";
-  }
-
-  return envVar;
-};
-
-const getConnectionField = async (
-  documentFieldName: string,
-  defaultValue?: string,
-): Promise<string> => {
-  if (firestoreDb === null) {
-    return defaultValue || "";
-  }
-
-  const doc = await firestoreDb
-    .collection("connection_info")
-    .doc("current")
-    .get();
-  const data = doc.data();
-  if (typeof data === "undefined") {
-    return defaultValue || "";
-  }
-  if (!(documentFieldName in data)) {
-    return defaultValue || "";
-  }
-
-  return data[documentFieldName];
-};
-
-const getConfig = async (documentFieldName: string, envVarName: string): Promise<string> => {
-  if (firestoreDb === null) {
-    return getEnvVar(envVarName);
-  }
-
-  return getConnectionField(documentFieldName, getEnvVar(envVarName));
-};
+const isGceEnv = getEnvVar("IS_GCE_ENV") === "1";
 
 // logger init
 const logger = getLogger({ level: "debug", isGceEnv });
