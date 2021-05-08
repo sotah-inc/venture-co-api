@@ -35,7 +35,7 @@
     "@sotah-inc/core": "^1.0.61",
     "@sotah-inc/server": "^1.0.65",
     "npm-run-all": "^4.1.5",
-    "typeorm": "^0.2.19"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@blueprintjs/tslint-config": "^1.9.0",
